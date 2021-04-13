@@ -60,12 +60,14 @@ echo '<table border="1">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Username</th>
         </tr>';
 
 foreach ($users as $user) {
     echo '<tr>
             <td>' . $user['id'] . '</td>
             <td>' . $user['full_name'] . '</td>
+            <td>' . $user['user_name'] . '</td>
           </tr>';
 }
 echo '</table>';
