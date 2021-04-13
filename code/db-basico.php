@@ -30,4 +30,4 @@ $stmt->bindParam(':email', $email);
 $stmt->bindParam(':user_name', $user_name);
 $stmt->bindParam(':password', $password);
 
-$stmt->execute();
+$stmt->execute()
