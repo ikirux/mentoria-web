@@ -41,21 +41,13 @@ foreach ($users as $user) {
     $user_name = $user['username'];
     $password = password_hash($user['password'], PASSWORD_DEFAULT);
 
-    $stmt->bindParam(':full_name', $full_name);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':user_name', $user_name);
+    $stmt->bindParam(':full_name', $user['name']);
+    $stmt->bindParam(':email', $user['email']);
+    $stmt->bindParam(':user_name', $user['username']);
     $stmt->bindParam(':password', $password);
 
     $stmt->execute();
 }
-
-
-
-
-
-
-
-
 
 // delete
 /*$id = 2;
