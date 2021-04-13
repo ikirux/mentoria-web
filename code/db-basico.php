@@ -12,10 +12,10 @@ try {
 }
 
 // Insert Masivo
-/*$data= [
-    ['Miguel Perez' , 'miguel.perez@segic.cl', ]
-];*/
-
+$users = [
+    ['Miguel Perez', 'miguel.perez@segic.cl', 'miguel.perez', 'miguel123'],
+    ['Andrea Perez', 'andrea.perez@segic.cl', 'andrea.perez', 'andrea123'],
+];
 
 $sql = "INSERT INTO users 
             (full_name, email, user_name, password)
@@ -25,17 +25,27 @@ $sql = "INSERT INTO users
 //statement
 $stmt = $db->prepare($sql);
 
-$full_name = 'Juan Perez';
-$email = "juan.perez@segic.cl";
-$user_name = 'juan.perez';
-$password = password_hash('juan123', PASSWORD_DEFAULT); // 'juan123';
+foreach ($users as $user) {
+    $full_name = $user[0];
+    $email = $user[1];
+    $user_name = $user[2];
+    $password = password_hash($user[3], PASSWORD_DEFAULT);
 
-$stmt->bindParam(':full_name', $full_name);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':user_name', $user_name);
-$stmt->bindParam(':password', $password);
+    $stmt->bindParam(':full_name', $full_name);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':user_name', $user_name);
+    $stmt->bindParam(':password', $password);
 
-$stmt->execute(); 
+    $stmt->execute();
+}
+
+
+
+
+
+
+
+
 
 // delete
 /*$id = 2;
