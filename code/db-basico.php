@@ -34,7 +34,7 @@ $stmt->bindParam(':password', $password);
 $stmt->execute(); */
 
 // delete
-$id = 3;
+$id = 2;
 $stmt = $db->prepare("DELETE FROM users WHERE id=:id");
-$stmt->bindParam(':id', 2);
+$stmt->bindParam(':id', $id);
 $stmt->execute();
