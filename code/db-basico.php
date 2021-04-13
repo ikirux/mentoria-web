@@ -13,8 +13,18 @@ try {
 
 // Insert Masivo
 $users = [
-    ['Miguel Perez', 'miguel.perez@segic.cl', 'miguel.perez', 'miguel123'],
-    ['Andrea Perez', 'andrea.perez@segic.cl', 'andrea.perez', 'andrea123'],
+    [
+        'name' => 'Miguel Perez',
+        'email' => 'miguel.perez@segic.cl',
+        'username' => 'miguel.perez',
+        'password' => 'miguel123'
+    ],
+    [
+        'name' => 'Andrea Perez',
+        'email' => 'andrea.perez@segic.cl',
+        'username' => 'andrea.perez',
+        'password' => 'andrea123'
+    ],
 ];
 
 $sql = "INSERT INTO users 
@@ -26,10 +36,10 @@ $sql = "INSERT INTO users
 $stmt = $db->prepare($sql);
 
 foreach ($users as $user) {
-    $full_name = $user[0];
-    $email = $user[1];
-    $user_name = $user[2];
-    $password = password_hash($user[3], PASSWORD_DEFAULT);
+    $full_name = $user['name'];
+    $email = $user['email'];
+    $user_name = $user['username'];
+    $password = password_hash($user['password'], PASSWORD_DEFAULT);
 
     $stmt->bindParam(':full_name', $full_name);
     $stmt->bindParam(':email', $email);
