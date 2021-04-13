@@ -12,7 +12,7 @@ try {
 }
 
 // Insert Masivo
-$users = [
+/*$users = [
     [
         'name' => 'Miguel Perez',
         'email' => 'miguel.perez@segic.cl',
@@ -36,18 +36,13 @@ $sql = "INSERT INTO users
 $stmt = $db->prepare($sql);
 
 foreach ($users as $user) {
-    $full_name = $user['name'];
-    $email = $user['email'];
-    $user_name = $user['username'];
-    $password = password_hash($user['password'], PASSWORD_DEFAULT);
-
     $stmt->bindParam(':full_name', $user['name']);
     $stmt->bindParam(':email', $user['email']);
     $stmt->bindParam(':user_name', $user['username']);
-    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':password', password_hash($user['password'], PASSWORD_DEFAULT));
 
     $stmt->execute();
-}
+}*/
 
 // delete
 /*$id = 2;
@@ -55,3 +50,13 @@ $stmt = $db->prepare("DELETE FROM users WHERE id=:id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 */
+
+// querying data
+$stmt = $db->prepare("SELECT * FROM users");
+$stmt->execute();
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($users as $user) {
+    echo $user['id'];
+    echo $user['full_name'];
+}
