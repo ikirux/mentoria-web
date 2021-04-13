@@ -56,7 +56,7 @@ $stmt = $db->prepare("SELECT * FROM users");
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo '<table>
+echo '<table border="1">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
