@@ -11,7 +11,8 @@ try {
     echo $e->getMessage();
 }
 
-// Preparar consulta
+// Insert
+/*
 $sql = "INSERT INTO users 
             (full_name, email, user_name, password)
         VALUES
@@ -30,4 +31,10 @@ $stmt->bindParam(':email', $email);
 $stmt->bindParam(':user_name', $user_name);
 $stmt->bindParam(':password', $password);
 
+$stmt->execute(); */
+
+// delete
+$id = 3;
+$stmt = $db->prepare("DELETE FROM users WHERE id=:id");
+$stmt->bindParam(':id', $id);
 $stmt->execute();
