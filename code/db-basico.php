@@ -11,8 +11,12 @@ try {
     echo $e->getMessage();
 }
 
-// Insert
-/*
+// Insert Masivo
+/*$data= [
+    ['Miguel Perez' , 'miguel.perez@segic.cl', ]
+];*/
+
+
 $sql = "INSERT INTO users 
             (full_name, email, user_name, password)
         VALUES
@@ -24,17 +28,18 @@ $stmt = $db->prepare($sql);
 $full_name = 'Juan Perez';
 $email = "juan.perez@segic.cl";
 $user_name = 'juan.perez';
-$password = 'juan123';
+$password = password_hash('juan123', PASSWORD_DEFAULT); // 'juan123';
 
 $stmt->bindParam(':full_name', $full_name);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':user_name', $user_name);
 $stmt->bindParam(':password', $password);
 
-$stmt->execute(); */
+$stmt->execute(); 
 
 // delete
-$id = 2;
+/*$id = 2;
 $stmt = $db->prepare("DELETE FROM users WHERE id=:id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
+*/
