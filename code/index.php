@@ -1,8 +1,8 @@
 <?php
 
-// codigo PHP
-echo "Hola Mundo";
+require "util/db.php";
 
+$db = connectDB();
 
 ?>
 <!DOCTYPE html>
