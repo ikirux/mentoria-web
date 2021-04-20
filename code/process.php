@@ -14,3 +14,6 @@ echo "<br>";
 print_r($_GET);
 
 echo "<br>";
+
+// Arreglo server
+print_r($_SERVER);
