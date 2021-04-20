@@ -127,6 +127,7 @@ if (isset($_POST['sign-up-button'])) {
 							<button class="login100-form-btn" name="sign-up-button">
 								Sign Up
 							</button>
+							<input type="hidden" name="super-secreto" value="valor super secreto">
 						</div>
 
 						<a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
