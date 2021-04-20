@@ -4,16 +4,32 @@ require "util/db.php";
 
 if (isset($_POST['sign-up-button'])) {
   	// Se envio el formulario
-  	//$db = connectDB();
+  	$db = connectDB();
 
-	print_r($_POST);
-} else {
-	echo "No se ha enviado la información";
-}
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$username = $_POST['username'];
+	$pass = $_POST['pass'];
+	$repeatPass = $_POST['repeat-pass'];
+	$rememberMe = $_POST['remember-me'];
 
+	$sql = "INSERT INTO users 
+				(full_name, email, user_name, password)
+			VALUES
+				(:full_name, :email, :user_name, :password)";
 
+	//statement
+	$stmt = $db->prepare($sql);
 
+	$stmt->bindParam(':full_name', $name);
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':user_name', $username);
+	$stmt->bindParam(':password', password_hash($pass, PASSWORD_DEFAULT));
 
+	$stmt->execute();
+
+	echo "Registro realizado con éxito";
+} 
 
 ?>
 <!DOCTYPE html>
