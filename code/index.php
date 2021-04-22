@@ -14,6 +14,7 @@ if (isset($_POST['sign-in-button'])) {
 	$password = $_POST['pass'];
 
 	$sql = "SELECT * FROM users WHERE username='$username'";
+	echo $sql;
 	$result = $db->query($sql);
 
 	if ($result) {
@@ -22,8 +23,6 @@ if (isset($_POST['sign-in-button'])) {
 	} else {
 		$valido = false;
 	}
-
-	echo "$username, $password";
 }
 
 ?>
