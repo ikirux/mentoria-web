@@ -29,10 +29,9 @@ if (isset($_POST['sign-up-button'])) {
 
 	$stmt->execute();
 
-	echo "Registro realizado con éxito";
+	$message = "Registro realizado con éxito";
+	$valido = 1;
 } 
-
-$valido = 0;
 
 ?>
 <!DOCTYPE html>
@@ -87,9 +86,7 @@ $valido = 0;
 					</span>
 
 					<?php if ($valido == 1): ?>
-						<p class="msg-form">Este es un texto controlado desde PHP</p>
-					<?php else: ?>
-						<h1>Soy un texto dentro del else</h1>
+						<p class="msg-form"><?= $message; ?></p>
 					<?php endif; ?>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
