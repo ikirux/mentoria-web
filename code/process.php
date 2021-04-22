@@ -17,3 +17,4 @@ echo "<br>";
 
 // Arreglo server
 print_r($_SERVER);
+
