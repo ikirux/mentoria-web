@@ -3,6 +3,8 @@
 // PDO
 require "util/db.php";
 
+$valido = 0;
+
 if (isset($_POST['sign-up-button'])) {
   	// Se envio el formulario
   	$db = connectDB();
