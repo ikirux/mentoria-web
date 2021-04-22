@@ -1,3 +1,20 @@
+<?php
+
+if (isset($_POST['sign-in-button'])) {
+	$dbname = "registro";
+    $dbuser = "registro-user";
+    $dbpassword = "registro-user";
+
+	$db = new mysqli('localhost', $dbuser, $dbpassword, $dbname);
+	$db->set_charset('utf8mb4');
+
+	$username = $_POST['username'];
+	$password = $_POST['pass'];
+
+	echo "$username, $password";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
