@@ -17,7 +17,7 @@ if (isset($_POST['sign-in-button'])) {
 	$result = $db->query($sql);
 
 	if ($result) {
-		$row = $result->fetch_row();
+		$row = $result->fetch_assoc();
 		print_r($row);
 	} else {
 		$valido = false;
