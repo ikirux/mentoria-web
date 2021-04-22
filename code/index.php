@@ -18,7 +18,12 @@ if (isset($_POST['sign-in-button'])) {
 
 	if ($result) {
 		$row = $result->fetch_assoc();
-		print_r($row);
+
+		if (password_verify($password, $row['password'])) {
+			header("Location: main.php");
+		} else {
+			$valido = false;
+		}
 	} else {
 		$valido = false;
 	}
