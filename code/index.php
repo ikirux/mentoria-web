@@ -13,7 +13,7 @@ if (isset($_POST['sign-in-button'])) {
 	$username = $_POST['username'];
 	$password = $_POST['pass'];
 
-	$sql = "SELECT * FROM users WHERE username='$username'";
+	$sql = "SELECT * FROM users WHERE user_name='$username'";
 	echo $sql;
 	$result = $db->query($sql);
 
