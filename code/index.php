@@ -15,6 +15,7 @@ if (isset($_POST['sign-up-button'])) {
 	$pass = $_POST['pass'];
 	$repeatPass = $_POST['repeat-pass'];
 	$rememberMe = $_POST['remember-me'];
+	$password = password_hash($pass, PASSWORD_DEFAULT);
 
 	$sql = "INSERT INTO users 
 				(full_name, email, user_name, password)
@@ -27,7 +28,7 @@ if (isset($_POST['sign-up-button'])) {
 	$stmt->bindParam(':full_name', $name);
 	$stmt->bindParam(':email', $email);
 	$stmt->bindParam(':user_name', $username);
-	$stmt->bindParam(':password', password_hash($pass, PASSWORD_DEFAULT));
+	$stmt->bindParam(':password', $password);
 
 	$stmt->execute();
 
