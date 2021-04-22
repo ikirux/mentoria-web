@@ -32,7 +32,7 @@ if (isset($_POST['sign-up-button'])) {
 	echo "Registro realizado con éxito";
 } 
 
-$valido = 1;
+$valido = 0;
 
 ?>
 <!DOCTYPE html>
