@@ -1,5 +1,7 @@
 <?php
 
+$valido = null;
+
 if (isset($_POST['sign-in-button'])) {
 	$dbname = "registro";
     $dbuser = "registro-user";
@@ -18,7 +20,7 @@ if (isset($_POST['sign-in-button'])) {
 		//$row = $result->fetch_row()
 		echo "El result existe";
 	} else {
-		echo "El result no existe";
+		$valido = false;
 	}
 
 	echo "$username, $password";
@@ -59,7 +61,7 @@ if (isset($_POST['sign-in-button'])) {
 	<style>
 		.msg-form {
 			margin: 1em;
-			color: #66bb6a;
+			color: red;
 		}
 	</style>
 </head>
@@ -75,6 +77,10 @@ if (isset($_POST['sign-in-button'])) {
 					<span class="login100-form-title p-b-59">
 						Sign In
 					</span>
+
+					<?php if ($valido === false): ?>
+						<p class="msg-form">Usuario o password incorrecto</p>
+					<?php endif; ?>
 
 					<div class="wrap-input100 validate-input" data-validate="Username is required">
 						<span class="label-input100">Username</span>
