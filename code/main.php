@@ -13,7 +13,7 @@ $sql = "SELECT * FROM users";
 //statement
 $stmt = $db->prepare($sql);
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+print_r($users);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +37,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tr>
         <?php foreach ($users as $user): ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
         <?php endforeach; ?>
     </table>
