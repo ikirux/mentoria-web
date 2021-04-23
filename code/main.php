@@ -12,8 +12,8 @@ $sql = "SELECT * FROM users";
 
 //statement
 $stmt = $db->prepare($sql);
+$stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print_r($users);
 ?>
 <!DOCTYPE html>
 <html lang="en">
