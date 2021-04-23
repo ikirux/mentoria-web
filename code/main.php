@@ -37,9 +37,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tr>
         <?php foreach ($users as $user): ?>
             <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
+                <td><?= $user['full_name'] ?></td>
+                <td><?= $user['user_name'] ?></td>
+                <td><?= $user['email'] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
