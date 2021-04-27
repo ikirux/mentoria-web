@@ -47,7 +47,7 @@ if (isset($_SESSION["msg-delete"])) {
         <?php endforeach; ?>
     </table>
 
-    <form action="create.php" method="post">
+    <form action="create.php" method="get">
             <input type="text" name="nombre" id="">
             <input type="text" name="email" id="">
         <input type="submit" value="Enviar">
