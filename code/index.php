@@ -51,7 +51,6 @@ if (isset($_SESSION["msg-delete"])) {
             <input type="text" name="nombre" id="">
             <input type="text" name="email" id="">
         <input type="submit" value="Enviar">
-        <button>Enviar</button>
     </form>
 </body>
 </html>
