@@ -6,3 +6,5 @@ $id = $_GET["id"];
 
 session_start();
 $_SESSION["msg-delete"] = "El registro se elimino correctamente";
+
+header("Location: index.php");
