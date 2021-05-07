@@ -1,0 +1,15 @@
+{
+    "name": "developen/phpmvc-framework",
+    "authors": [
+        {
+            "name": "Carlos Pinto",
+            "email": "carlos.pinto@developen.cl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
