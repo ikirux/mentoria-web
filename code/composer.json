@@ -1,5 +1,6 @@
 {
     "name": "developen/phpmvc-framework",
+    "description": "Un super framework",
     "authors": [
         {
             "name": "Carlos Pinto",
