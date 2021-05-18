@@ -30,10 +30,9 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
 
         if ($callback === false) {
-            echo "Not Found";
-            exit;
+            return "Not Found";
         }
 
-        echo call_user_func($callback);
+        return call_user_func($callback);
     }
 }
