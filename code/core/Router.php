@@ -42,6 +42,6 @@ class Router
 
     public function renderView($view)
     {
-        include_once __DIR__ . "../views/$view.php";
+        include_once __DIR__ . "/../views/$view.php";
     }
 }
