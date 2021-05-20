@@ -45,7 +45,8 @@ class Router
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view);
 
-        return str_replace('{{content}}', $viewContent, $layoutContent);
+        return $layoutContent;
+        //return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
     public function layoutContent()
