@@ -48,6 +48,11 @@ class Router
             return $this->renderView($callback);
         }
 
+        if (is_array($callback)) {
+            var_dump($callback);
+            exit;
+        }
+
         return call_user_func($callback);
     }
 
