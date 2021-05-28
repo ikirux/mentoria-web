@@ -2,18 +2,17 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\Controller;
 
 class SiteController extends Controller
 {
     public function home()
     {
-        $params = [
+        return $this->render('home', [
             'name' => 'Juan',
             'surname' => 'Perez',
-        ];
-
-        return $this->render('home', $params);
+        ]);
     }
 
     public function contact()
@@ -23,6 +22,13 @@ class SiteController extends Controller
 
     public function handleContact()
     {
+        var_dump($_POST);
+        exit;
+
+        /*$body = Application::$app->request->getBody();
+        var_dump($body);
+        exit;*/
+
         return "Procesando informacion";
     }
 }
