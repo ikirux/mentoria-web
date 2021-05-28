@@ -22,12 +22,9 @@ class SiteController extends Controller
 
     public function handleContact()
     {
-        var_dump($_POST);
-        exit;
-
-        /*$body = Application::$app->request->getBody();
+        $body = Application::$app->request->getBody();
         var_dump($body);
-        exit;*/
+        exit;
 
         return "Procesando informacion";
     }
