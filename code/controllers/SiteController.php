@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
 
@@ -27,8 +26,10 @@ class SiteController extends Controller
         var_dump($body);
         exit;*/
         $body = $request->getBody();
-        var_dump($body);
-        exit;
+
+        // Validar datos
+        // Crear modelo
+
 
         return "Procesando informacion";
     }
