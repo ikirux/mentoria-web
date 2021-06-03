@@ -27,6 +27,8 @@ class AuthController extends Controller
                 return 'Success';
             }
 
+            var_dump($registerModel->errors);
+
             return "Procesando datos del formulario";
         }
 
