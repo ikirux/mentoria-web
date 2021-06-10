@@ -77,7 +77,7 @@ abstract class Model
             self::RULE_EMAIL => 'This field must be an email',
             self::RULE_MIN => 'Min length of the field must be {min}',
             self::RULE_MAX => 'Max length of the field must be {max}',
-            self::RULE_MATCH => 'This fiels must be the same as {match}',
+            self::RULE_MATCH => 'This field must be the same as {match}',
         ];
     }
 }
