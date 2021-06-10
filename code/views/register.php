@@ -7,7 +7,7 @@
       class="form-control <?= $model->hasError('firstname') ? 'is-invalid' : '' ?>">
 
     <div class="invalid-feedback">
-    bla bla
+      <?= $model->getFirstError('firstname') ?>
     </div>
   </div>
   <div class="mb-3">
