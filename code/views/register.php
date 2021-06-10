@@ -3,7 +3,8 @@
 <form method="POST">
   <div class="mb-3">
     <label class="form-label">Firstname</label>
-    <input type="text" name="firstname" value="<?= $model->firstname ?>" class="form-control">
+    <input type="text" name="firstname" value="<?= $model->firstname ?>" 
+      class="form-control is-invalid">
   </div>
   <div class="mb-3">
     <label class="form-label">Lastname</label>
