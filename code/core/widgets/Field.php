@@ -7,7 +7,7 @@ use app\core\Model;
 class Field
 {
     public const TYPE_TEXT = 'text';
-    public const TYPE_MAIL = 'mail';
+    public const TYPE_MAIL = 'email';
     public const TYPE_PASSWORD = 'password';
 
     public Model $model;
