@@ -19,7 +19,7 @@ class RegisterModel extends DbModel
 
     public function save()
     {
-        parent::save();
+        return parent::save();
     }
 
     public function rules(): array
