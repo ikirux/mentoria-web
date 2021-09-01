@@ -22,12 +22,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/post/{post}', function ($slug) {
+Route::get('/post/{post}', function ($id) {
     return view('post', [
-        'post' => Post::find($slug),
+        'post' => Post::findOrFail($id),
     ]);
-})->where('post', '[A-Za-z\_-]+');
-
-//Route::get('/', fn () => view('welcome'));
-//Route::get('/', fn () => 'Hola SEGIC');
-//Route::get('/', fn () => ['id' => 7, 'url' => 'http://www.segic.cl']);
+});
