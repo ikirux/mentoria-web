@@ -11,15 +11,6 @@ class CreateTablePosts extends Migration
      *
      * @return void
      */
-
-
-    public string $title;
-    public string $resumen;
-    public string $date;
-    public string $slug;
-    public string $body;
-
-
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
