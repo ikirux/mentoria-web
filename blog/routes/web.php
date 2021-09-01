@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\File;
 */
 
 Route::get('/', function () {
-    $posts = cache()->rememberForever('posts.all', fn () => Post::all());
-
+    $posts = Post::all();
     return view('posts', [
         'posts' => $posts
     ]);
