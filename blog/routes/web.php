@@ -1,8 +1,8 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\File;
 */
 
 Route::get('/', function () {
+    \Illuminate\Support\Facades\DB::listen(function ($query) {
+        logger($query->sql, $query->bindings);
+    });
+
     $posts = Post::all();
     return view('posts', [
         'posts' => $posts
@@ -25,5 +29,11 @@ Route::get('/', function () {
 Route::get('/post/{post}', function (Post $post) {
     return view('post', [
         'post' => $post,
+    ]);
+});
+
+Route::get('/category/{category:slug}', function (Category $category) {
+    return view('posts', [
+        'posts' => $category->posts,
     ]);
 });
