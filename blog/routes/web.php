@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::lastest('published_at')
+        'posts' => Post::latest('published_at')
             ->with('category')
             ->get()
     ]);
