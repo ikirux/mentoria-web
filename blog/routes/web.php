@@ -37,7 +37,6 @@ Route::get('/category/{category:slug}', function (Category $category) {
 });
 
 Route::get('/author/{author}', function (User $author) {
-    dd($author->posts->load(['category', 'author']));
     return view('posts', [
         // eager loading (load, with)
         // por defecto es lazy loading
