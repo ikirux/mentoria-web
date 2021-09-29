@@ -6,7 +6,7 @@
                 Latest <span class="text-blue-500">Laravel From Scratch</span> News
             </h1>
 
-            <h2 class="inline-flex mt-2">By Lary Laracore <img src="./images/lary-head.svg"
+            <h2 class="inline-flex mt-2">By Lary Laracore <img src="/images/lary-head.svg"
                                                                alt="Head of Lary the mascot"></h2>
 
             <p class="text-sm mt-14">
@@ -109,7 +109,7 @@
 
                             <footer class="flex justify-between items-center mt-8">
                                 <div class="flex items-center text-sm">
-                                    <img src="./images/lary-avatar.svg" alt="Lary avatar">
+                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
                                     <div class="ml-3">
                                         <h5 class="font-bold">{{ $post->author->name }}</h5>
                                         <h6>Mascot at SEGIC</h6>
