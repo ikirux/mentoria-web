@@ -1,5 +1,7 @@
 <x-layout>
-    @foreach ($posts as $post)
-        <p>{{ $post->title }}</p>
-    @endforeach
+    <x-slot name="content">
+        @foreach ($posts as $post)
+            <p>{{ $post->title }}</p>
+        @endforeach
+    </x-slot>
 </x-layout>
