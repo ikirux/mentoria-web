@@ -21,7 +21,7 @@ Route::get('/', function () {
         /*'posts' => Post::latest('published_at')
             ->with(['category', 'author'])
             ->get()*/
-        'posts' => collect(),
+        'posts' => collect([]),
     ]);
 });
 
