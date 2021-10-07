@@ -22,7 +22,6 @@ Route::get('/', function () {
             ->with(['category', 'author'])
             ->get(),
         'categories' => Category::all(),
-        'test' => 'bla bla'
     ]);
 });
 
