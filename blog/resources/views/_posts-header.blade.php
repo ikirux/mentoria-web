@@ -18,9 +18,12 @@
                     Category
                 </button>
 
-                <a href="#" x-show="show">One</a>
-                <a href="#" x-show="show">Two</a>
-                <a href="#" x-show="show">Three</a>
+                <div x-show="show" class="py-2">
+                    <a href="#">One</a>
+                    <a href="#">Two</a>
+                    <a href="#">Three</a>
+                </div>
+
             </div>
             <!-- <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
                 <option value="category" disabled selected>
