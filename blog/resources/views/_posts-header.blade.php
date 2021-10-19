@@ -18,7 +18,7 @@
                     Category
                 </button>
 
-                <div x-show="show" class="py-2 absolute">
+                <div x-show="show" class="py-2 absolute bg-gray-100">
                     <a href="#" class="block">One</a>
                     <a href="#" class="block">Two</a>
                     <a href="#" class="block">Three</a>
