@@ -19,9 +19,9 @@
                 </button>
 
                 <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl z-50 text-left px-3 text-sm">
-                    <a href="#" class="block text-left px-3 text-sm leading-6">One</a>
-                    <a href="#" class="block text-left px-3 text-sm leading-6">Two</a>
-                    <a href="#" class="block text-left px-3 text-sm leading-6">Three</a>
+                    <a href="#" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500">One</a>
+                    <a href="#" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500">Two</a>
+                    <a href="#" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500">Three</a>
                 </div>
 
             </div>
