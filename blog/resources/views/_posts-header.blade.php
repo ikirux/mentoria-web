@@ -13,9 +13,9 @@
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
         <!--  Category -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-            <div x-data="{ show: false }" @click.away="show=false">
+            <div x-data="{ show: false }" @click.away="show = false">
                 <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold lg:w-32 w-full flex lg:inline-flex">
-                    Categories
+                    {{ isset($currentCategory) ? $currentCategory->name : 'Categories' }}
 
                     <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22" height="22" viewBox="0 0 22 22">
                         <g fill="none" fill-rule="evenodd">
