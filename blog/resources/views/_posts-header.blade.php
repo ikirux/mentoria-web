@@ -28,9 +28,7 @@
                     </button>
                 </x-slot>
 
-                <a href="/" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 hover:text-white">
-                    All
-                </a>
+                <x-dropdown-item href="/" :actived="request()->routeIs('home')">All</x-dropdown-item>
 
                 @foreach ($categories as $category)
                     <x-dropdown-item href="/category/{{ $category->slug }}" :actived="isset($currentCategory) && $currentCategory->is($category)">
