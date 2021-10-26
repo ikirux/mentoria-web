@@ -24,7 +24,7 @@ class Post extends Model
         $query->when(
             isset($filters['search']),
             fn ($query, $search) =>
-            $query->where('title', 'like', "%$search%")
+            $query->where('title', 'like', '%' . $search . '%')
                     ->orWhere('resumen', 'like', "%$search%")
         );
 
