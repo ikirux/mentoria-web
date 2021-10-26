@@ -19,11 +19,11 @@ class Post extends Model
         return 'slug';
     }
 
-    public function scopeFilter($query)
+    public function scopeFilter($query, array $filters)
     {
-        if (request('search')) {
-            return $query->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('resumen', 'like', '%' . request('search') . '%');
+        if (isset($filters['search'])) {
+            return $query->where('title', 'like', '%' . $filters['search'] . '%')
+                ->orWhere('resumen', 'like', '%' . $filters['search'] . '%');
         }
     }
 
