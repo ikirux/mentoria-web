@@ -22,7 +22,8 @@ Route::get('/', function () {
 
     if (request('search')) {
         // agregar las condiciones de busqueda
-        $posts->where('title', 'like', '%' . request('search') . '%');
+        $posts->where('title', 'like', '%' . request('search') . '%')
+            ->orWhere('resumen', 'like', '%' . request('search') . '%');
     }
 
     return view('posts', [
