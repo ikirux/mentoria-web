@@ -17,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    dd(request(['search']));
+    $posts = Post::latest('published_at')
+                ->with(['category', 'author']);
+
+    if (request('search')) {
+        // agregar las condiciones de busqueda
+        $posts->where('title', 'like', '%' . request('search') . '%');
+    }
+
     return view('posts', [
-        'posts' => Post::latest('published_at')
-            ->with(['category', 'author'])
-            ->get(),
+        'posts' => $posts->get(),
         'categories' => Category::all(),
     ]);
 })->name('home');
