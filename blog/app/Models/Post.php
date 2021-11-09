@@ -21,7 +21,7 @@ class Post extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        return $query->when(
+        $query->when(
             $filters['search'] ?? false,
             fn ($query, $search) =>
                 $query
@@ -29,10 +29,14 @@ class Post extends Model
                     ->orWhere('resumen', 'like', "%$search%")
         );
 
-        // if (isset($filters['search'])) {
-        //     return $query->where('title', 'like', '%' . $filters['search'] . '%')
-        //         ->orWhere('resumen', 'like', '%' . $filters['search'] . '%');
-        // }
+        $query->when(
+            $filters['category'] ?? false,
+            fn ($query, $category) =>
+                $query->whereHas('category', fn ($query) =>
+                    $query->where('slug', $category))
+        );
+
+        return $query;
     }
 
     // hasOne, hasMany, belongsTo, belongsToMany
