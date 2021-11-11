@@ -10,13 +10,18 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('posts', [
-            'posts' => Post::latest('published_at')
-                        ->filter(request(['search', 'category']))
-                        ->get(),
-            'categories' => Category::all(),
-            'currentCategory' => Category::where('slug', request('category'))->first(),
-        ]);
+        return Post::latest('published_at')
+                ->filter(request(['search', 'category']))
+                ->get();
+
+        // return view('posts', [
+        //     'posts' => Post::latest('published_at')
+        //                 ->filter(request(['search', 'category']))
+        //                 ->get(),
+        //     'categories' => Category::all(),
+        //     'currentCategory' =>
+        //         request('category') !== null ? Category::where('slug', request('category'))->first() : null,
+        // ]);
     }
 
     public function show(Post $post)
